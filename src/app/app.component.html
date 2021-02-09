@@ -1,37 +1,46 @@
   <div class="container">
-    <h1 class="text text-center text-primary pt-3" style="font-weight: bold;">Weather App</h1>
     <div class="row">
-      <div class="offset-md-4 col-md-4">
+      <div class="offset-md-2 col-md-4">
+        <img width="180" alt="Angular Logo" src="../assets/image/imagen.png" class="d-flex justify-content-center mx-auto pt-4">
+        <h1 class="text text-center text-light pt-3" style="font-weight: bold;">Weather App</h1>
         <form [formGroup]="form" novalidate (ngSubmit)="search($event)"> 
           <div class="md-form form-group mt-5">
             <input type="text" class="form-control"  formControlName="country" id="country" placeholder="Country name">
           </div>
           <div *ngIf="countryField.errors && countryField.touched">
-            <p *ngIf="countryField.hasError('required')" class="text text-danger">
+            <small *ngIf="countryField.hasError('required')" class="text text-danger">
               This field cannot be blank
-            </p>
+            </small>
           </div>
           <div class="md-form form-group mt-5">
-           
             <input type="text" class="form-control"  formControlName="city" id="city" placeholder="City name">
           </div>
           <div *ngIf="cityField.errors && cityField.touched">
-            <p *ngIf="cityField.hasError('required')" class="text text-danger">
+            <small *ngIf="cityField.hasError('required')" class="text text-danger">
               This field cannot be blank
-            </p>
+            </small>
           </div><br>
           <button class="btn btn-light" type="submit">Search</button>
         </form>
-          <div *ngIf="weather">
-            <div class="d-flex justify-content-md-center"><label>Temperature: </label>{{temperature | number : '1.2-2'}}º C</div>
-            <div class="d-flex justify-content-sm-center"><label>Humidity: </label>{{humidity}}%</div>
-            <div class="d-flex justify-content-lg-center"><label>Pressure: </label>{{pressure}}hPa</div>
-            <div class="d-flex justify-content-xl-center"><label>Max. Temperature: </label>{{temperatureMax | number : '1.2-2'}} º C</div>
-            <div class="d-flex justify-content-xl-center"><label>Min. Temperature: </label>{{temperatureMin | number : '1.2-2'}} º C</div>
-            <div class="d-flex justify-content-xl-center"><label>Feels like: </label> {{feelsLike | number : '1.2-2'}} º C</div>
-            <div class="d-flex justify-content-xl-center"><label>Description: </label> {{description | titlecase }}</div>
-          </div>
       </div>
+          <div class="col-md-6" *ngIf="weather">
+            <br><br><br><br><br><br><br>
+            <h1 class="py-3 text text-center text-light" style="font-weight: bold;">Weather Information</h1>
+            <div class="d-flex justify-content-md-center text text-light"><label>Temperature: {{temperature | number : '1.2-2'}}º C</label>
+            </div>
+            <div class="d-flex justify-content-sm-center text text-light"><label>Humidity: {{humidity}}%</label>
+            </div>
+            <div class="d-flex justify-content-lg-center text text-light"><label>Pressure: {{pressure}}hPa</label>
+            </div>
+            <div class="d-flex justify-content-xl-center text text-light"><label>Max. Temperature: {{temperatureMax | number : '1.2-2'}} º C</label>
+            </div>
+            <div class="d-flex justify-content-xl-center text text-light"><label>Min. Temperature: {{temperatureMin | number : '1.2-2'}} º C</label>
+            </div>
+            <div class="d-flex justify-content-xl-center text text-light"><label>Feels like:   {{feelsLike | number : '1.2-2'}} º C</label> 
+            </div>
+            <div class="d-flex justify-content-xl-center text text-light"><label>Description: {{description | titlecase }}</label> 
+            </div>
+          </div>
     </div>
   </div>
 
