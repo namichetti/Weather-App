@@ -11,8 +11,8 @@ export class WeatherService {
 
 
   constructor(private http:HttpClient) {
-    //this.URI ='https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=';
-    this.URI ='http://api.openweathermap.org/data/2.5/weather?q=';
+    this.URI ='https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=';
+   // this.URI ='http://api.openweathermap.org/data/2.5/weather?q=';
 
    }
 
