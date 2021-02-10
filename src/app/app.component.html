@@ -44,8 +44,10 @@
     </div>
   </div>
   <br>
-  <div id="map-mapbox">
-  </div>
+  <div *ngIf="!weather" class="city text text-center text-light">City: Ashland</div>
+  <div *ngIf=" weather" class="city text text-center text-light">City: {{city}}</div>
+  <br>
+  <div id="map-mapbox"></div>
   <br><br>
 
 

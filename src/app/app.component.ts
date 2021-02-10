@@ -22,6 +22,7 @@ export class AppComponent implements OnInit{
   toCelsius:number = 273.15;
   lat;
   lon;
+  city;
   map:mapboxgl.Map;
 
   constructor(private wheaterService:WeatherService, private formBuilder:FormBuilder){
@@ -29,8 +30,8 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){
     this.buildForm();
-    this.mapBox('-74.5', '40');
-    this.marker('-74.5', '40');
+    this.mapBox('-77.483', '37.7501');
+    this.marker('-77.483', '37.7501');
   }
 
   private buildForm() {
@@ -71,6 +72,7 @@ export class AppComponent implements OnInit{
         this.humidity       = this.weather.main.humidity;
         this.lat            = this.weather.coord.lat;
         this.lon            = this.weather.coord.lon;
+        this.city           = this.weather.name;
         this.mapBox(this.lon,this.lat);
         this.marker(this.lon,this.lat);
       },
