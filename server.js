@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 
 // add this code
-const whitelist = ['http://localhost:4200']; // list of allow domain
+const whitelist = ['http://localhost:3000']; // list of allow domain
 
 const corsOptions = {
     origin: function (origin, callback) {
