@@ -77,7 +77,7 @@ export class AppComponent implements OnInit{
         this.marker(this.lon,this.lat);
       },
         err => {
-          console.log(err)
+          alert('404 - Not Found')
         }
     )
   }
