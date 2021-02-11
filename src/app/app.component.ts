@@ -78,6 +78,7 @@ export class AppComponent implements OnInit{
       },
         err => {
           alert('404 - Not Found')
+          console.log(err)
         }
     )
   }
