@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../app/service/weather.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { environment } from '../environments/environment';
 import * as mapboxgl from 'mapbox-gl'; 
 
 @Component({
